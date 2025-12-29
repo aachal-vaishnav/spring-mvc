@@ -1,0 +1,8 @@
+#spring.application.name=FirstSpringMVC
+spring:
+  application:
+    name: FirstSpringMVC
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
