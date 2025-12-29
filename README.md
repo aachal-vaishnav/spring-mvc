@@ -114,6 +114,103 @@ spring:
 * Which file extension to use
 
 ---
+## 📌 Why Use `application.yml` Instead of `application.properties`?
+
+Spring Boot supports **both** formats, but `application.yml` offers several advantages, especially for **larger and structured configurations**.
+
+---
+
+### ✅ 1️⃣ Better Readability
+
+YAML is **more human-readable** because it uses **indentation instead of repeated keys**.
+
+**application.properties**
+
+```properties
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+```
+
+**application.yml**
+
+```yml
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+```
+
+---
+
+### ✅ 2️⃣ Hierarchical Configuration (Nested Structure)
+
+YAML naturally represents **hierarchical data**, which matches Spring Boot’s configuration structure.
+
+```yml
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+```
+
+✔️ No long dot-separated keys
+✔️ Cleaner and more organized
+
+---
+
+### ✅ 3️⃣ Native Support for Lists
+
+YAML makes it easy to define **lists**.
+
+```yml
+servers:
+  - dev.example.com
+  - test.example.com
+  - prod.example.com
+```
+
+---
+
+### ✅ 4️⃣ Native Support for Maps (HashMaps)
+
+YAML is excellent for defining **key-value pairs (Maps / HashMaps)**.
+
+```yml
+database:
+  credentials:
+    username: admin
+    password: secret
+```
+
+---
+
+### ✅ 5️⃣ Less Boilerplate for Large Applications
+
+As applications grow, `application.properties` becomes:
+
+* Long
+* Repetitive
+* Hard to maintain
+
+YAML keeps configurations:
+
+* Structured
+* Scalable
+* Easy to modify
+
+---
+
+### ⚠️ When to Use `application.properties`?
+
+Use `application.properties` when:
+
+* Configuration is very small
+* You prefer single-line key-value pairs
+* No complex or nested data is needed
+```
+
 
 ## 🎮 Step 2: Configure the Controller Layer
 
